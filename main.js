@@ -1,13 +1,16 @@
 'use strict'
 
 function isLeapYear(year) {
-    if (Number.isInteger(year)) {
-        return year % 400 === 0 || (year % 100 !== 0 && year % 4 === 0);
-    } else {
-        throw 'exception';
-    }
+    return year % 400 === 0 || (year % 100 !== 0 && year % 4 === 0);
 }
 
 function daysInYear(year) {
-    return isLeapYear(year) ? 366 : 365;
+    try {
+        if (!Number.isInteger(year)) {
+            throw new Error();
+        }
+        return isLeapYear(year) ? 366 : 365;
+    } catch {
+        return 'exception';
+    }
 }
