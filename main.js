@@ -5,12 +5,12 @@ function isLeapYear(year) {
 }
 
 function daysInYear(year) {
-	try {
-		if (!Number.isInteger(year)) {
-			throw new Error();
-		}
-		return isLeapYear(year) ? 366 : 365;
-	} catch {
-		return 'exception';
-	}
+  try {
+    if (!Number.isInteger(year)) {
+      throw new Error();
+    }
+    return isLeapYear(year) ? 366 : 365;
+  } catch {
+    return 'exception';
+  }
 }
